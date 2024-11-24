@@ -1,0 +1,19 @@
+궁금한 내용
+- 스트림 처리 구조
+
+
+참조 문건
+https://taegyunwoo.github.io/java/Java_Lambda
+  - ~ 표준 API 이전 내용 참고
+https://github.com/cheese10yun/TIL/blob/master/JAVA/%EB%9E%8C%EB%8B%A4%EC%8B%9D-%EA%B8%B0%EC%B4%88.md
+  - 표준 API 구체적 설명
+  - 스트림 구조 상세 설명!
+
+사실 람다식은 익명 클래스 객체와 동등
+- 함수형 인터페이스 타입 변수 -> 해당 인터페이스를 구현한 익명 클래스 
+
+인터페이스와 함수형 인터페이스의 차이점?
+- https://esoongan.tistory.com/176
+오로지 추상형 메서드 하나만을 가지는 인터페이스
+
+
