@@ -1,0 +1,38 @@
+Propagation.REQUIRED	현재 트랜잭션이 존재하면 그 트랜잭션 내에서 실행하고, 트랜잭션이 없으면 새로운 트랜잭션을 시작합니다.
+Propagation.SUPPORTS	현재 트랜잭션이 존재하면 그 트랜잭션 내에서 실행하고, 트랜잭션이 없으면 트랜잭션 없이 실행합니다.
+Propagation.MANDATORY	현재 트랜잭션이 존재하면 그 트랜잭션 내에서 실행하고, 트랜잭션이 없으면 예외를 발생시킵니다.
+Propagation.REQUIRES_NEW	항상 새로운 트랜잭션을 시작하고, 현재 트랜잭션이 존재하면 일시정지시킵니다.
+Propagation.NOT_SUPPORTED	트랜잭션 없이 실행하고, 현재 트랜잭션이 존재하면 일시정지시킵니다.
+Propagation.NEVER	트랜잭션 없이 실행하고, 현재 트랜잭션이 존재하면 예외를 발생시킵니다.
+Propagation.NESTED	현재 트랜잭션이 존재하면 중첩된 트랜잭션으로 실행하고, 트랜잭션이 없으면 REQUIRED와 같이 동작합니다.
+
+‘Checked Exception’의 경우에는 롤백을 수행하지 않는다
+UncheckedException(즉, RuntimeException)이 발생하더라도 이를 try-catch로 처리하면 트랜잭션은 롤백되지 않고 커밋한다.
+
+
+
+CheckedException 발생 시 트랜잭션 동작
+
+  try-catch로 처리
+    UncheckedException을 try-catch로 잡을 때 트랜잭션 동작과 동일하게 처리
+    TransactionAspectSupport.invokeWithinTransaction()가 실행되더라도 비즈니스 로직에서 예외가 try-catch로 처리되었기 때문에, invokeWithinTransaction() 메서드의 catch 블록에서 감지되지 않는다. 따라서 completeTransactionAfterThrowing() 메서드도 호출되지 않으며, 
+    트랜잭션은 정상적으로 커밋
+
+  throws로 처리
+    IOException이 TransactionAspectSupport.invokeWithinTransaction() 내부의 try-catch 블록에서 잡혔기 때문에 completeTransactionAfterThrowing()가 호출
+    @Transactional에 rollbackFor 설정을 하지 않았기 때문에, RuleBasedTransactionAttribute.rollbackRules에도 아무 롤백 규칙이 존재하지 않는다. 따라서 winner가 null이 되어 1. UncheckedException 발생 시 트랜잭션 동작과 동일하게 DefaultTransactionAttribute.rollBackOn()가 호출
+    다만 이번에는 넘어오는 예외가 RuntimeException이나 Error 타입이 아니기 때문에 rollbackOn() 메서드는 false를 반환하여 트랜잭션이 롤백되지 않고 커밋
+
+@Transactional(rollbackFor = IOException.class) // rollbackFor 지정!
+  @Transactional에서는 rollbackFor이라는 필드로 Throwable의 모든 하위 예외 클래스들의 롤백을 유발하도록 정의할 수 있다.
+    결론적으로 @Transactional(rollbackFor = IOException.class)을 사용하면 IOException을 throw 했을 때 롤백이 일어난다.
+
+
+UncheckedException + noRollbackFor시 트랜잭션 동작
+  noRollbackFor 옵션을 사용하면 특정 UncheckedException이 발생하더라도 트랜잭션을 롤백하지 않고 커밋할 수 있도록 설정할 수 있다.
+  UncheckedException 발생 시 트랜잭션 동작처럼 winner가 null이 되어 rollbackOn()이 true로 반환되어 롤백이 일어나겠지만 이번에는 rollbackRules에 IllegalArgumentException에 대한 롤백 방지 규칙이 설정되어 있기 때문에 rollbackOn() 메서드는 false를 반환하여 롤백되지 않고 성공적으로 커밋된다.
+  결론적으로 @Transactional(noRollbackFor = RuntimeException.class)을 사용하면 RuntimeException이 발생하더라도 롤백이 일어나지 않고, 성공적으로 커밋된다.
+https://dkswnkk.tistory.com/760
+
+
+원하는 정보는 Propagation 관련 내용이 더 컸음.
