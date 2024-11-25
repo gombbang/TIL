@@ -1,0 +1,52 @@
+@ApiImplicitParams
+: API의 매개변수를 설명하고 문서화하는 데 사용.
+Method의 Parameter가 복수일 경우, @ApiImplictParams로 @ApiImplictParam을 복수개 사용할 수 있다
+예시 : 
+@ApiImplicitParam(name = "name", value = "User's name", dataType = "String", paramType = "path")
+public User getUserByName(@PathVariable String name) 
+...
+@ApiImplicitParams(
+        {
+            @ApiImplicitParam(
+                name = "id"
+                , value = "자격증 아이디"
+                , required = true
+                , dataType = "string"
+                , paramType = "path"
+                , defaultValue = "None"
+            )
+        ,
+            @ApiImplicitParam(
+                name = "fields"
+                , value = "응답 필드 종류"
+                , required = false
+                , dataType = "string"
+                , paramType = "query"
+                , defaultValue = ""
+            )
+        })
+...
+https://www.crocus.co.kr/1878
+https://velog.io/@gillog/Swagger-UI-Annotation-%EC%84%A4%EB%AA%85
+
+@Embeddable 
+: 하나의 객체를 이루는 데이터를 묶어 표현하기 위한 내용.
+임베디드 타입 
+: 여러 개의 값 타입을 활용해 새로운 값 타입을 직접 정의하는 내용
+* 하이버네이트에서는 이 임베디드 타입을 컴포넌트라고 부른다.
+@Embeddable : 값 타입을 정의하는 곳에 표시
+@Embedded : 값 타입을 사용하는 곳에 표시
+https://velog.io/@chang626/%EA%B0%92-%ED%83%80%EC%9E%85#-2-%EC%9E%84%EB%B2%A0%EB%94%94%EB%93%9C-%ED%83%80%EC%9E%85%EB%B3%B5%ED%95%A9-%EA%B0%92-%ED%83%80%EC%9E%85
+
+
+@NoArgusConstructor 인자들
+access :   접근제어자 할당
+  - public, protected, package, private
+force :    primitive type에 맞는 기본 값이 설정됨
+https://velog.io/@code-10/%EB%A1%AC%EB%B3%B5-AllNoArgsConstructor-%EC%A0%9C%EB%8C%80%EB%A1%9C-%EC%95%8C%EA%B3%A0-%EC%82%AC%EC%9A%A9%ED%95%B4%EB%B3%B4%EC%9E%90
+
+@EqualsAndHashCode
+- hashcode는 객체 내부 값을 해싱한 값을 비교, 내부 값이 같으면 동일
+- equals는 같은 객체 주소를 의미하는지 비교.
+https://velog.io/@gloom/Lombok-Data%EC%9D%98-EqualsAndHashCode%EC%9D%B4-%EB%AD%90%ED%95%98%EB%8A%94-%EC%95%A0%EC%9D%BC%EA%B9%8C
+
