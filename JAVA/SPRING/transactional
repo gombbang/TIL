@@ -36,3 +36,6 @@ https://dkswnkk.tistory.com/760
 
 
 원하는 정보는 Propagation 관련 내용이 더 컸음.
+
+  readOnly = true
+  propagation = Propagation.REQUIRES_NEW
