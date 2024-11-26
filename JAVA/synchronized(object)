@@ -1,0 +1,79 @@
+synchronized는 lock을 사용해 동기화를 시킨다.
+  자바 코드에서 동기화 영역
+  동기화는 객체에 대한 동기화로 이루어짐(synchronized on some object)
+
+하지만 사용 방식에 따라 혼동되기 쉽다. 
+
+synchronized는 4가지의 사용법이 있다. 
+- sychronized method
+- sychronized block
+- static synchonized block
+- static sychronized method
+
+데이터나 메서드 점유하고 있는 스레드 -> 공유데이터에 대한 thread-safe
+
+
+sychronized method
+이 메소드를 가진 인스턴스(객체)를 기준으로 이루어진다. 
+그러므로, 한 클래스가 동기화된 인스턴스 메소드를 가진다면, 여기서 동기화는 이 클래스의 한 인스턴스를 기준으로 이루어진다. 
+한 시점에 오직 하나의 쓰레드만이 동기화된 인스턴스 메소드를 실행할 수 있다. 
+만일 둘 이상의 인스턴스가 있다면, 한 시점에, 한 인스턴스에, 한 쓰레드만 이 메소드를 실행할 수 있다. 
+-> 인스턴스 당 한 쓰레드
+--> synchronize메서드는 인스턴스 단위로 lock을 건다. 이때, synchronized가 적용된 모든 object에 대해서 lock을 공유한다.
+   https://jgrammer.tistory.com/entry/Java-%ED%98%BC%EB%8F%99%EB%90%98%EB%8A%94-synchronized-%EB%8F%99%EA%B8%B0%ED%99%94-%EC%A0%95%EB%A6%AC
+   
+
+static sychronized method
+이 메소드를 가진 클래스의 클래스 객체를 기준으로 이루어진다. 
+JVM 안에 클래스 객체는 클래스 당 하나만 존재할 수 있으므로, 같은 클래스에 대해서는 오직 한 쓰레드만 동기화된 스태틱 메소드를 실행할 수 있다.
+만일 동기화된 스태틱 메소드가 다른 클래스에 각각 존재한다면, 쓰레드는 각 클래스의 메소드를 실행할 수 있다.
+-> 클래스 -쓰레드가 어떤 스태틱 메소드를 실행했든 상관없이- 당 한 쓰레드
+--> 인스턴스 단위의 lock과 클래스 단위의 lock은 공유되지 않았다.
+static synchronized method를 정리해보면 클래스 단위로 lock을 걸지만, 인스턴스 단위의 synchronized method와 lock을 공유하지 않는다.
+
+
+sychronized block
+동기화가 반드시 메소드 전체에 대해 이루어져야 하는 것은 아니다. 
+종종 메소드의 특정 부분에 대해서만 동기화하는 편이 효율적인 경우가 이때.
+메소드 안에 동기화 블록을 따로 작성할 수 있다. 
+메소드 안에서도 이 블록 안의 코드만 동기화
+동기화 블록이 괄호 안에 한 객체를 전달받고 있음. 예제에서는 'this' 가 사용되었다. 이는 이 add() 메소드가 호출된 객체를 의미
+이 동기화 블록 안에 전달된 객체를 모니터 객체(a monitor object) 
+이 코드는 이 모니터 객체를 기준으로 동기화가 이루어짐
+동기화된 인스턴스 메소드는 자신(메소드)을 내부에 가지고 있는 객체를 모니터 객체로 사용한다.
+public void add(int value){
+...
+    synchronized(this){
+       this.count += value;   
+    }
+...
+  }
+-> 같은 모니터 객체를 기준으로 동기화된 블록 안의 코드를 오직 한 쓰레드만이 실행할 수 있다.
+-->lock은 synchronized block에 진입할 때 획득하고 빠져나오면서 반납하므로 block으로 범위를 지정하는게 더 효율적이다. 
+synchronized block도 method와 동일하게 인스턴스에 대해서 적용된다.
+ lock을 거는 객체를 지정할 수 있다. 객체를 넘기면 인스턴스 단위로 lock을 걸고 .class형식으로 넘기면 클래스 단위의 lock을 건다. 
+
+
+static synchonized block
+메소드를 가지고 있는 클래스 객체를 동기화 기준으로 잡는다.
+ public class MyClass {
+    public static synchronized void log1(String msg1, String msg2){
+       log.writeln(msg1);
+       log.writeln(msg2);
+    }
+
+    public static void log2(String msg1, String msg2){
+       synchronized(MyClass.class){
+          log.writeln(msg1);
+          log.writeln(msg2);  
+       }
+    }
+  }
+  같은 시점에 오직 한 쓰레드만 이 두 메소드 중 어느 쪽이든 실행 가능
+  두 번째 동기화 블록의 괄호에 MyClass.class 가 아닌 다른 객체를 전달한다면, 쓰레드는 동시에 각 메소드를 실행 가능.
+https://coding-start.tistory.com/68
+-> static의 특성상 this같이 현재 객체를 가르키는 표현을 사용할 수 없다. 
+static synchroinzed method방식과 차이는 lock객체를 지정하고 block으로 범위를 한정지을 수 있다는 점
+
+
+* synchronized는 thread별 동기화 순서를 보장하지 않는다.
