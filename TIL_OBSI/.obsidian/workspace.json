@@ -154,13 +154,23 @@
               "icon": "calendar-with-checkmark",
               "title": "Timeline"
             }
+          },
+          {
+            "id": "610faf47de0f3051",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
           }
-        ]
+        ],
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -171,7 +181,8 @@
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
       "obsidian-day-planner:Open Timeline": false,
-      "obsidian-day-planner:Open Multi-Day View": false
+      "obsidian-day-planner:Open Multi-Day View": false,
+      "obsidian-git:Open Git source control": false
     }
   },
   "active": "ab701b37d6bcf4bf",
