@@ -1,0 +1,183 @@
+{
+  "main": {
+    "id": "db8a90083c483e47",
+    "type": "split",
+    "children": [
+      {
+        "id": "96591e321cd2f15a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ab701b37d6bcf4bf",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "TestCode/Note_ Day 1.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Note_ Day 1"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "993570d245e89842",
+    "type": "split",
+    "children": [
+      {
+        "id": "a4a8b30b34dd7c56",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "dec37197ba007327",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "87b17f07b3410180",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "9896e4dd884a79af",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "72b467fa43c5647f",
+    "type": "split",
+    "children": [
+      {
+        "id": "ea45c4f551094227",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ee2515d114fea260",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "TestCode/Note_ Day 1.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Note_ Day 1"
+            }
+          },
+          {
+            "id": "b1d4f896c04af5ae",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "TestCode/Note_ Day 1.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Note_ Day 1"
+            }
+          },
+          {
+            "id": "f1ee5368c66bee23",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "deb1de8a2870b007",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "TestCode/Note_ Day 1.md"
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Note_ Day 1"
+            }
+          },
+          {
+            "id": "95bd587094c28888",
+            "type": "leaf",
+            "state": {
+              "type": "planner-timeline",
+              "state": {},
+              "icon": "calendar-with-checkmark",
+              "title": "Timeline"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "obsidian-day-planner:Open Timeline": false,
+      "obsidian-day-planner:Open Multi-Day View": false
+    }
+  },
+  "active": "ab701b37d6bcf4bf",
+  "lastOpenFiles": [
+    "Welcome.md",
+    "TestCode/Note_ Day 1.md",
+    "TestCode"
+  ]
+}

@@ -1,0 +1,234 @@
+{
+  "main": {
+    "id": "2843db23fb4af728",
+    "type": "split",
+    "children": [
+      {
+        "id": "28b979841f867913",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d5e7ab1aae93dc07",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "7cde5ded28a905f4",
+    "type": "split",
+    "children": [
+      {
+        "id": "9539ccf81c6f201a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f26632c8df995a1e",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "a357338c948c7051",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "f5e2d490df4f1261",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 289.5
+  },
+  "right": {
+    "id": "bc5422271479bae7",
+    "type": "split",
+    "children": [
+      {
+        "id": "dd26367a43de274e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "59677952886b6079",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "2024-12-10.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for 2024-12-10"
+            }
+          },
+          {
+            "id": "4de4388796a1353f",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "24년 12월 3주차/2024-12-16.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from 2024-12-16"
+            }
+          },
+          {
+            "id": "e704a5ef6ec345cc",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "b3178f2235413f66",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "일정 참고용.md"
+              },
+              "icon": "lucide-list",
+              "title": "Outline of 일정 참고용"
+            }
+          },
+          {
+            "id": "b51b34c797686ad4",
+            "type": "leaf",
+            "state": {
+              "type": "planner-timeline",
+              "state": {},
+              "icon": "calendar-with-checkmark",
+              "title": "Timeline"
+            }
+          },
+          {
+            "id": "2612be539ebb2f6f",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
+          }
+        ],
+        "currentTab": 5
+      }
+    ],
+    "direction": "horizontal",
+    "width": 301.5
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "obsidian-day-planner:Open Timeline": false,
+      "obsidian-day-planner:Open Multi-Day View": false,
+      "obsidian-git:Open Git source control": false,
+      "audio-recorder:Start/stop recording": false
+    }
+  },
+  "active": "d5e7ab1aae93dc07",
+  "lastOpenFiles": [
+    "2025 통신 플랫폼(서비스) 리그 풋살대회.jpg",
+    "참고 파일들/화면 캡처 2025-01-06 104636.png",
+    "user Id 찾아오기 ㅜㅜ.md",
+    "참고 파일들/Pasted image 20250103113413.png",
+    "주간보고/25년/1월/25년 1월 5주차 (주간보고 미작성)/2025-01-23.md",
+    "주간보고/25년/1월",
+    "주간보고/25년",
+    "주간보고/24년",
+    "주간보고/25년/1월/25년 1월 4주차 (주간보고 미작성)/2025-01-16.md",
+    "주간보고/25년 1월 6주차 (주간보고 미작성)",
+    "주간보고/25년/1월/25년 1월 3주차 (주간보고 미작성)/2025-01-10.md",
+    "주간보고/25년/1월/25년 1월 5주차 (주간보고 미작성)",
+    "주간보고/25년/1월/25년 1월 4주차 (주간보고 미작성)",
+    "주간보고/25년/1월/25년 1월 2주차 (주간보고 미작성)/2025-01-03.md",
+    "주간보고/25년/1월/25년 1월 3주차 (주간보고 미작성)/2025-01-09.md",
+    "주간보고/25년/1월/25년 1월 2주차 (주간보고 미작성)/2025-01-04.md",
+    "주간보고/25년/1월/25년 1월 3주차 (주간보고 미작성)",
+    "주간보고/25년/1월/25년 1월 5주차 (주간보고 미작성)/2025-01-28.md",
+    "주간보고/25년/1월/25년 1월 2주차 (주간보고 미작성)",
+    "OJT.md",
+    "주간보고/25년/1월/25년 1월 4주차 (주간보고 미작성)/2025-01-22.md",
+    "주간보고/25년/1월/25년 1월 4주차 (주간보고 미작성)/2025-01-20.md",
+    "참고 파일들/Recording 20250123131516.m4a",
+    "채널.md",
+    "참고 파일들/Recording 20250123112244.m4a",
+    "장비단말.md",
+    "상품할인.md",
+    "가입.md",
+    "conflict-files-obsidian-git.md",
+    "주간보고/25년/1월/25년 1월 4주차 (주간보고 미작성)/2025-01-21.md",
+    "참고 파일들/Pasted image 20250121150930.png",
+    "참고 파일들/Pasted image 20250121150925.png",
+    "참고 파일들/Pasted image 20250121150915.png",
+    "참고 파일들/Pasted image 20250121142152.png",
+    "주간보고/25년/1월/25년 1월 4주차 (주간보고 미작성)/2025-01-19.md",
+    "MRKT_ID vs LVL2_ORG_CD.md",
+    "주간보고/25년/1월/25년 1월 4주차 (주간보고 미작성)/2025-01-18.md",
+    "참고 파일들/Pasted image 20250120102419.png",
+    "user의 조직코드는 뭘 의미하는가.md",
+    "Obsi/temp.md",
+    "참고 파일들/Pasted image 20250116170625.png",
+    "참고 파일들/Pasted image 20250116170331.png",
+    "주간보고/25년/1월/25년 1월 3주차 (주간보고 미작성)/2025-01-15.md",
+    "주간보고/25년/1월/25년 1월 2주차 (주간보고 미작성)/2025-01-07.md",
+    "주간보고/25년/1월/25년 1월 2주차 (주간보고 미작성)/2025-01-08.md",
+    "참고 파일들/Pasted image 20250112131528.png"
+  ]
+}
