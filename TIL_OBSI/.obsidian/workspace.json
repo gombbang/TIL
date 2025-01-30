@@ -20,23 +20,8 @@
               "icon": "lucide-file",
               "title": "Note_ Day 1"
             }
-          },
-          {
-            "id": "9e2dee5c8ea25709",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "TestCode/Note_ Day 2.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Note_ Day 2"
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -199,6 +184,45 @@
       "obsidian-day-planner:Open Multi-Day View": false,
       "obsidian-git:Open Git source control": false
     }
+  },
+  "floating": {
+    "id": "411fd5e214016b34",
+    "type": "floating",
+    "children": [
+      {
+        "id": "692e04415473858b",
+        "type": "window",
+        "children": [
+          {
+            "id": "bb129e9a2e262529",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "9e2dee5c8ea25709",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "TestCode/Note_ Day 2.md",
+                    "mode": "source",
+                    "source": false
+                  },
+                  "icon": "lucide-file",
+                  "title": "Note_ Day 2"
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "vertical",
+        "x": 1914,
+        "y": 24,
+        "width": 636,
+        "height": 660,
+        "maximize": false,
+        "zoom": 0
+      }
+    ]
   },
   "active": "9e2dee5c8ea25709",
   "lastOpenFiles": [
