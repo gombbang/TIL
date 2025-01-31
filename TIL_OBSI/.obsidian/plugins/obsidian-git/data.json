@@ -31,9 +31,9 @@
   "dateInHistoryView": false,
   "diffStyle": "split",
   "lineAuthor": {
-    "show": false,
+    "show": true,
     "followMovement": "inactive",
-    "authorDisplay": "initials",
+    "authorDisplay": "first name",
     "showCommitHash": false,
     "dateTimeFormatOptions": "date",
     "dateTimeFormatCustomString": "YYYY-MM-DD HH:mm",
@@ -52,7 +52,7 @@
     "textColorCss": "var(--text-muted)",
     "ignoreWhitespace": false,
     "gutterSpacingFallbackLength": 5,
-    "lastShownAuthorDisplay": "initials",
+    "lastShownAuthorDisplay": "first name",
     "lastShownDateTimeFormatOptions": "date"
   },
   "autoCommitMessage": "vault backup: {{date}}"

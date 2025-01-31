@@ -55,7 +55,8 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical"
+                "sortOrder": "alphabetical",
+                "autoReveal": false
               },
               "icon": "lucide-folder-closed",
               "title": "Files"
@@ -200,7 +201,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "9e2dee5c8ea25709",
+  "active": "610faf47de0f3051",
   "lastOpenFiles": [
     "TestCode/Note_ Day 1.md",
     "TestCode/Note_ Day 2.md",
