@@ -1,0 +1,97 @@
+1. EC2 리전 수정
+https://velog.io/@imchanyang/AWS-EC2-%ED%94%84%EB%A6%AC%ED%8B%B0%EC%96%B4%EC%97%90%EC%84%9C-%EB%A6%AC%EC%A0%84resion-%EC%A7%80%EC%97%AD-%EB%B3%80%EA%B2%BD%ED%95%98%EA%B8%B0
+
+2. 프리티어 생성
+- 인스턴스 유형 추천 : Amazon Linux 2 (2023이 아니야!)
+https://velog.io/@sunblock99/AWS-%ED%94%84%EB%A6%AC%ED%8B%B0%EC%96%B4-EC2-%EC%9D%B8%EC%8A%A4%ED%84%B4%EC%8A%A4-%EB%A7%8C%EB%93%9C%EB%8A%94-%EB%B0%A9%EB%B2%95
+
+
+3. mysql 설치
+2  sudo yum update -y
+    3  sudo systemctl
+    7  sudo yum -y update
+    8  sudo yum install https://dev.mysql.com/get/mysql80-community-release-el7-5.noarch.rpm
+    9  sudo yum -y install mysql-community-server
+   10  ls /etc/yum.repos.d
+   11  sudo yum repolist
+   19  sudo rpm --import https://repo.mysql.com/RPM-GPG-KEY-mysql-2023
+   20  sudo yum update
+   21  sudo systemctl status mysqld
+   22  systemctl status mysqld
+   23  mysql --version
+   24  sudo yum -y install mysql-community-server
+   25  mysql --version
+   26  sudo systemctl start mysqld
+   27  sudo systemctl enable --now mysqld
+   28  systemctl status myslqd
+   30  sudo grep 'temporary password' /var/log/mysqld.log
+
+4. mysql 로그인
+```
+mysql 패스워드 
+sudo grep 'temporary password' /var/log/mysqld.log
+2025-04-20T11:53:59.156863Z 6 [Note] [MY-010454] [Server] A temporary password is generated for root@localhost: /+BaPr< (!8eA
+
+/+BaPr< (!8eA 가 패스워드.
+```
+   31  mysql -u root -p
+
+5. mysql 패스워드 수정
+
+```
+ALTER user 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '0000';
+ERROR 1819 (HY000): Your password does not satisfy the current policy requirements
+
+기본 정책이 Strong이라서 에러 발생
+
+ set global validate_password.policy=LOW;
+ERROR 1820 (HY000): You must reset your password using ALTER USER statement before executing this statement.
+mysql> alter user 'root'@'localhost' identified with mysql_native_password by '/+BaPr< (!8eA';
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> set global validate_password.policy=LOW;
+Query OK, 0 rows affected (0.00 sec)
+
+low도 기준은 있는 듯, 0413 안됌, abc1234$ 됐음.
+flush previleges 한 뒤 
+exit
+mysql -u root -p  수정한 패스워드
+```
+
+6. git과 node js 설치
+
+   32  ls
+   33  pwd
+   34  yum install git
+   35  sudo yum install git
+   36  git -v
+   37  sudo yum update -y
+   38  sudo yum install -y gcc-c++ make
+   39  curl -sL https://rpm.nodesource.com/setup_14.x | sudo -E bash -
+   40  history
+
+
+---
+
+
+GPG KEY Update가 있었음, 2022 > 2023.
+2022를 2023으로 수정하니 가능 
+2024 2025는 404에러로 못 가져옴, 2023이 맞음. 
+sudo yum update도 잘 됌.
+
+
+이후 재설치해야 mysqld를 진짜 가져오는 것 같다.
+sudo yum -y install mysql-community-server
+
+
+https://velog.io/@9ruem2/%ED%8A%B8%EB%9F%AC%EB%B8%94%EC%8A%88%ED%8C%85-EC2%EC%97%90-MySQL%EC%84%A4%EC%B9%98%EC%8B%9C-GPG-key-ErrorAmazon-Linux-2-%EC%82%AC%EC%9A%A9
+참고 문헌이었음.
+GPG 원인에 대해 잘 나와있음.
+
+
+아마존 리눅스 2023을 쓸 때는 el9 버전 레포지토리를 사용해주어야 한다고 한다!
+
+
+참고문헌: https://developnote.tistory.com/34
+
+정상 확인
