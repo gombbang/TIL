@@ -85,18 +85,3 @@ NestJS는 DI(Dependency Injection)를 사용하는 프레임워크이므로 의�
  실제 애플리케이션 정상 실행 및 테스트
 
 📌 다음 단계: .env를 통해 프로덕션 설정 정리 & 실제 배포 환경과의 통합 테스트
-
----
-
-### 🔧 저장 방법
-
-1. VS Code 또는 에디터에서 새 파일 생성
-2. 이름: `ci-cd-troubleshooting.md`
-3. 위 내용 붙여넣기
-4. 저장 후 Git에 커밋
-
-```bash
-git add ci-cd-troubleshooting.md
-git commit -m "docs: add CI/CD troubleshooting guide"
-git push origin feature/cicd
-```
